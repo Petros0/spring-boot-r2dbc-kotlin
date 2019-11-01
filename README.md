@@ -13,10 +13,10 @@ http://localhost:8080/employees/
 Available endpoints:
 
 GET http://localhost:8080/employees/
+
 GET http://localhost:8080/employees/1
-POST
+
+POST http://localhost:8080/employees/
+
 DELETE http://localhost:8080/employees/
-
-
-
 
