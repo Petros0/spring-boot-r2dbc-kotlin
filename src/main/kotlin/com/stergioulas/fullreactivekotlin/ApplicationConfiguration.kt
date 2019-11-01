@@ -4,7 +4,6 @@ import org.springframework.boot.ApplicationRunner
 import org.springframework.context.annotation.Bean
 import org.springframework.data.r2dbc.core.DatabaseClient
 import org.springframework.stereotype.Component
-import org.springframework.web.reactive.function.server.router
 import reactor.core.publisher.Flux
 import java.util.stream.Stream
 
@@ -35,14 +34,5 @@ class ApplicationConfiguration {
                 .then()
                 .thenMany(saveAll)
                 .subscribe()
-
-    }
-
-    @Bean
-    fun route(handler: EmployeeHandler) = router {
-        GET("/employees") { handler.getAll(it) }
-        GET("/employees/{lastName}") { handler.getByLastName(it) }
-        POST("/employees") { handler.save(it) }
-        DELETE("/employees/{id}") { handler.deleteById(it) }
     }
 }
